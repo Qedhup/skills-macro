@@ -1,0 +1,194 @@
+// Code for the primary call window.
+// This lets you choose which function you are calling and what number you're giving to that function.
+
+const finalLevel = '<p><input id="myInputID" type="number" value="1"/></p>';
+
+new Dialog ({
+	title: "Life Skills Roller",
+	content: finalLevel,
+	buttons: {
+		button1: {
+			label: "Fishing",
+			callback: (html) => checkFishing(html),
+		},
+		button2: {
+			label: "Gathering",
+			callback: (html) => checkGathering(html),
+		},
+		button3: {
+			label: "Hunting",
+			callback: (html) => checkHunting(html),
+		},
+	}
+}) .render(true);
+
+// - - - Fishing Tables - - -
+
+function checkFishing (html) {
+	//Level Variable
+	const skillLevel = html.find("input#myInputID").val();
+
+	// Pull index of a tables in a compendium
+	const rollTablePack = game.packs.get("world.lifeskill-tables");
+	rollTablePack.getIndex();
+
+	switch (skillLevel) {
+		case '1':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 01')._id;
+			break;
+		case '2':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 02')._id;
+			break;
+		case '3':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 03')._id;
+			break;
+		case '4':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 04')._id;
+			break;
+		case '5':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 05')._id;
+			break;
+		case '6':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 06')._id;
+			break;
+		case '7':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 07')._id;
+			break;
+		case '8':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 08')._id;
+			break;
+		case '9':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 09')._id;
+			break;
+		case '10':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Fishing 10')._id;
+			break;
+		default:
+			ui.notifications.info("Not work?");
+	}
+		rollTablePack.getDocument(rollTableID).then(table => table.draw());
+}
+
+// - - - Gathering Tables - - -
+
+function checkGathering (html) {
+	//Level Variable
+	const skillLevel = html.find("input#myInputID").val();
+
+	// Pull index of a tables in a compendium
+	const rollTablePack = game.packs.get("world.lifeskill-tables");
+	rollTablePack.getIndex();
+
+	switch (skillLevel) {
+		case '1':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 01')._id;
+			break;
+		case '2':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 02')._id;
+			break;
+		case '3':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 03')._id;
+			break;
+		case '4':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 04')._id;
+			break;
+		case '5':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 05')._id;
+			break;
+		case '6':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 06')._id;
+			break;
+		case '7':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 07')._id;
+			break;
+		case '8':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 08')._id;
+			break;
+		case '9':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 09')._id;
+			break;
+		case '10':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Gathering 10')._id;
+			break;
+		default:
+			ui.notifications.info("Not work?");
+	}
+		rollTablePack.getDocument(rollTableID).then(table => table.draw());
+}
+
+// - - - Hunting Tables - - -
+
+function checkHunting (html) {
+	//Level Variable
+	const skillLevel = html.find("input#myInputID").val();
+
+	// Pull index of a tables in a compendium
+	const rollTablePack = game.packs.get("world.lifeskill-tables");
+	rollTablePack.getIndex();
+
+	switch (skillLevel) {
+		case '1':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 01')._id;
+			break;
+		case '2':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 02')._id;
+			break;
+		case '3':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 03')._id;
+			break;
+		case '4':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 04')._id;
+			break;
+		case '5':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 05')._id;
+			break;
+		case '6':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 06')._id;
+			break;
+		case '7':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 07')._id;
+			break;
+		case '8':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 08')._id;
+			break;
+		case '9':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 09')._id;
+			break;
+		case '10':
+			// Roll from a compendium table
+			rollTableID = rollTablePack.index.find(t => t.name === 'Hunting 10')._id;
+			break;
+		default:
+			ui.notifications.info("Not work?");
+	}
+		rollTablePack.getDocument(rollTableID).then(table => table.draw());
+}
